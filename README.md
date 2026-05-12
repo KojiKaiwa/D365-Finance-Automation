@@ -10,3 +10,5 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Established a proactive AI performance monitoring and knowledge governance system  
 ・Developed an AI-driven expense audit system to identify policy violations and financial risks  
 ・Implemented Departmental Risk Exposure Analysis to monitor financial compliance and internal controls  
+・Built a Budget Forecasting tool for D365 Finance to predict year-end overruns and provide consultant recommendations  
+・Visualized Budget vs. Forecast gaps using Matplotlib to support strategic financial planning  
