@@ -14,5 +14,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Visualized Budget vs. Forecast gaps using Matplotlib to support strategic financial planning  
 ・Developed a general ledger audit tool for D365 F&O to detect duplicate journal entries and mitigate compliance risks  
 ・Enhanced ledger audit tool to calculate the financial impact of duplicate entries and generate adjustment recommendations  
-
-
+・Developed an Accounts Receivable Aging Analysis tool for D365 F&O to evaluate collection risks and predict cash flow impacts  
+・Added portfolio analysis logic to calculate AR risk composition rates and generate working capital strategy recommendations  
+・Refactored aging analytics loop to support dynamic date processing and format validation  
