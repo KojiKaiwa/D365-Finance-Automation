@@ -17,3 +17,5 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Developed an Accounts Receivable Aging Analysis tool for D365 F&O to evaluate collection risks and predict cash flow impacts  
 ・Added portfolio analysis logic to calculate AR risk composition rates and generate working capital strategy recommendations  
 ・Refactored aging analytics loop to support dynamic date processing and format validation  
+・Automated a prioritized debt collection task generator using multi-variable rule scoring in D365 F&O context  
+・Finalized the collections automation workflow by implementing an automated CSV task-list exporter with dynamic time-stamping  
