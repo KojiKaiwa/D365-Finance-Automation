@@ -19,3 +19,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Refactored aging analytics loop to support dynamic date processing and format validation  
 ・Automated a prioritized debt collection task generator using multi-variable rule scoring in D365 F&O context  
 ・Finalized the collections automation workflow by implementing an automated CSV task-list exporter with dynamic time-stamping  
+・Developed a fixed assets depreciation audit engine for D365 F&O to detect calculation variances and profile misconfigurations  
+・Enhanced the asset audit engine to automatically generate IFRS/GAAP compliant journal adjustments based on materiality thresholds  
+
