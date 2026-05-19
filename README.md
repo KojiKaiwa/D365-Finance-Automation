@@ -21,4 +21,5 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Finalized the collections automation workflow by implementing an automated CSV task-list exporter with dynamic time-stamping  
 ・Developed a fixed assets depreciation audit engine for D365 F&O to detect calculation variances and profile misconfigurations  
 ・Enhanced the asset audit engine to automatically generate IFRS/GAAP compliant journal adjustments based on materiality thresholds  
-
+・Developed a 3-Way Matching audit engine for D365 F&O procurement to detect vendor overcharges and partial delivery discrepancies  
+・Added purchase overcharge risk analysis to calculate procurement variance impacts and support internal cash control governance  
