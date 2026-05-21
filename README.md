@@ -25,4 +25,4 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Added purchase overcharge risk analysis to calculate procurement variance impacts and support internal cash control governance  
 ・Developed an inventory cost accounting audit engine for D365 F&O to detect standard cost variances and automate master data adjustment advice  
 ・Enhanced inventory cost audit toolkit to calculate financial impacts on COGS and asset valuation, simulating D365 Cost Rollup scenarios  
-
+・Finalized the comprehensive D365 F&O Cross-Module Audit Dashboard, integrating General Ledger, Procurement, and Cost Accounting analytics  
