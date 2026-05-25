@@ -26,3 +26,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Developed an inventory cost accounting audit engine for D365 F&O to detect standard cost variances and automate master data adjustment advice  
 ・Enhanced inventory cost audit toolkit to calculate financial impacts on COGS and asset valuation, simulating D365 Cost Rollup scenarios  
 ・Finalized the comprehensive D365 F&O Cross-Module Audit Dashboard, integrating General Ledger, Procurement, and Cost Accounting analytics  
+・ Developed an automated data migration pipeline using **Python (Pandas)** to map legacy account codes to new system configurations.  
+・ Implemented error-handling logic using `.isna()` to catch unmapped data, automatically exporting discrepancies to a BOM-included CSV file.  
+・ Built a dynamic master-data integration loop utilizing `dict(zip())` to reprocess errors and validate data integrity with zero manual overrides.  
