@@ -29,3 +29,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・ Developed an automated data migration pipeline using **Python (Pandas)** to map legacy account codes to new system configurations.  
 ・ Implemented error-handling logic using `.isna()` to catch unmapped data, automatically exporting discrepancies to a BOM-included CSV file.  
 ・ Built a dynamic master-data integration loop utilizing `dict(zip())` to reprocess errors and validate data integrity with zero manual overrides.  
+・Developed a post-migration ledger verification engine using **Python (Pandas)** to cross-check opening balances against legacy systems.  
+・Implemented robust `how='outer'` merge and `fillna(0)` logic to ensure missing master accounts are not dropped during reconciliation.  
+・Refactored calculation directions (`Legacy_Balance` - `New_Balance`) and mapped intuitive human-readable status labels to deliver accurate, audit-ready financial insights for executive stakeholders.  
