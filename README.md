@@ -32,3 +32,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Developed a post-migration ledger verification engine using **Python (Pandas)** to cross-check opening balances against legacy systems.  
 ・Implemented robust `how='outer'` merge and `fillna(0)` logic to ensure missing master accounts are not dropped during reconciliation.  
 ・Refactored calculation directions (`Legacy_Balance` - `New_Balance`) and mapped intuitive human-readable status labels to deliver accurate, audit-ready financial insights for executive stakeholders.  
+・Engineered a batch transaction auditing tool using **Python (Pandas)** to verify system-to-system data migrations via record counts and monetary calculations.  
+・Utilized `.abs().sum()` logic to create a robust Hash Total verification script, completely preventing the cancellation of debit/credit signs to detect data truncation.  
+・Designed a line-by-line debugger using `pd.merge()` with custom `suffixes` to instantly target corrupted row identifiers (`LineID`) and automate engineering root-cause instructions.  
