@@ -38,6 +38,10 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Designed a line-by-line debugger using `pd.merge()` with custom `suffixes` to instantly target corrupted row identifiers (`LineID`) and automate engineering root-cause instructions.  
 ・Developed an automated date-standardization engine using **Python (Pandas)** to parse mixed transactional date formats (`/`, `.`, and unseparated strings) into a uniform `YYYY-MM-DD` format.  
 ・Leveraged `pd.to_datetime()` with `format='mixed'` and `errors='coerce'` to isolate invalid data inputs while preserving structural data integrity for complex ERP data migrations.  
+・Sanitized non-uniform master files by systematically stripping full-width and half-width leading/trailing whitespaces.  
+・Developed an advanced corporate-suffix normalization logic (e.g., handling legal prefixes/suffixes like "株式会社" or "(株)") using regular expressions (re) to ensure high-accuracy entity matching.  
+・Executed a precise master-data deduplication pipeline utilizing keep='first' to preserve the baseline master records while eliminating duplicate vendor accounts.  
+・Established rigid data integrity rules to prevent critical operational errors such as duplicate invoice payments across sub-ledgers.  
 ・Executed systematic testing protocols by isolating verification workspaces to prevent index corruption during the debugging phase.  
 ・Developed a comprehensive master data cleansing script using **Python (Pandas)** to standardize vendor nomenclature.  
 ・Employed `str.strip(' 　')` to truncate both full-width and half-width leading/trailing whitespace anomalies, preventing downstream multi-profile record duplication.  
