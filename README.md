@@ -46,3 +46,6 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Developed a comprehensive master data cleansing script using **Python (Pandas)** to standardize vendor nomenclature.  
 ・Employed `str.strip(' 　')` to truncate both full-width and half-width leading/trailing whitespace anomalies, preventing downstream multi-profile record duplication.  
 ・Implemented data purge mechanisms via `drop_duplicates(keep='last')` to isolate audit trail logs and automatically retain the most recent system records.  
+・Automated Discrepancy Detection:Utilizes Pandas `merge` with join indicators to compare transactional sub-ledgers against the master registry, flagging any unregistered or unauthorized vendor accounts (e.g., catching unmapped accounts like `VEND099`).  
+・Audit Trail Generation:Isolates discrepancy logs, filters out unnecessary processing artifacts, and automatically compiles the exceptions into a dedicated audit report (`Audit_Alert_Report.xlsx`).  
+・Sub-ledger Safeguards:Provides immediate visibility into internal control gaps, ensuring all purchase orders tie out to valid master profiles to mitigate the risk of financial leakage or inaccurate general ledger mapping.  
