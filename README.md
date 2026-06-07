@@ -46,6 +46,15 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Developed a comprehensive master data cleansing script using **Python (Pandas)** to standardize vendor nomenclature.  
 ・Employed `str.strip(' 　')` to truncate both full-width and half-width leading/trailing whitespace anomalies, preventing downstream multi-profile record duplication.  
 ・Implemented data purge mechanisms via `drop_duplicates(keep='last')` to isolate audit trail logs and automatically retain the most recent system records.  
+  
+## Feature Update: Enterprise 3-Way Matching (PO-GR-INV Reconciler)  
+### Architectural Workflow  
+1. **Multi-Stage Inner Joins:** Combines data feeds from Procurement (Purchase Orders), SCM/Warehouse (Goods Receipts), and Accounts Payable (Invoices).  
+2. **Composite Key Alignment:** Performs strict joins on composite primary keys (`PO_Number` + `Item_Code`) to ensure line-level auditing granularity.  
+3. **Discrepancy Matrix Generation:** Computes boolean flag vectors (`Qty_Match` & `Amount_Match`) to instantaneously evaluate system alignment.  
+### Target Anomalies Isolated  
+・**Quantity Mismatch (Under/Over-delivery):** Catches instances where items received at the warehouse do not match the contractual PO volume.  
+・**Financial Mismatch (Over-billing):** Proactively flags supplier invoice variations against approved purchasing thresholds before general ledger posting.  
 ・Automated Discrepancy Detection:Utilizes Pandas `merge` with join indicators to compare transactional sub-ledgers against the master registry, flagging any unregistered or unauthorized vendor accounts (e.g., catching unmapped accounts like `VEND099`).  
 ・Audit Trail Generation:Isolates discrepancy logs, filters out unnecessary processing artifacts, and automatically compiles the exceptions into a dedicated audit report (`Audit_Alert_Report.xlsx`).  
 ・Sub-ledger Safeguards:Provides immediate visibility into internal control gaps, ensuring all purchase orders tie out to valid master profiles to mitigate the risk of financial leakage or inaccurate general ledger mapping.  
