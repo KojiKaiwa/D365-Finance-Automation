@@ -58,3 +58,12 @@ As a Finance Tech Lead, I focus on bridging the gap between ERP integrity and AI
 ・Automated Discrepancy Detection:Utilizes Pandas `merge` with join indicators to compare transactional sub-ledgers against the master registry, flagging any unregistered or unauthorized vendor accounts (e.g., catching unmapped accounts like `VEND099`).  
 ・Audit Trail Generation:Isolates discrepancy logs, filters out unnecessary processing artifacts, and automatically compiles the exceptions into a dedicated audit report (`Audit_Alert_Report.xlsx`).  
 ・Sub-ledger Safeguards:Provides immediate visibility into internal control gaps, ensuring all purchase orders tie out to valid master profiles to mitigate the risk of financial leakage or inaccurate general ledger mapping.  
+## Feature Update: Automated Cash Reconciliation & Variance Analyzer
+A high-performance cash reconciliation module was integrated to simulate automated clearinghouse (ACH) and bank lockbox processing. This tool automates the validation loop between transactional merchant sales and actual cash receipts, which is a foundational requirement for high-volume FinTech and payment systems.
+
+### Key Capabilities
+・**Automated Clearing & Matching:** Leverages left outer joins on unique transaction identifiers (`Transaction_ID`) to verify whether sales records have successfully cleared the banking sub-ledger.
+・**Dual-Tier Anomaly Detection:** 
+  - **Uncredited Revenue Alert:** Automatically catches unmapped/unpaid ledger items where transactions exist but corresponding bank records are missing.
+  - **Calculation Variance Alert:** Proactively flags processing errors or incorrect fee deductions by running delta calculations (`Expected_Net` vs. `Actual_Net`).
+・**Production-Grade Code Quality:** Implemented explicit deep copies (`.copy()`) during data frame slicing to mitigate pointer ambiguity and prevent `SettingWithCopyWarning`, ensuring deterministic data integrity.
