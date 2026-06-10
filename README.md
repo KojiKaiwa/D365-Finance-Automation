@@ -76,3 +76,11 @@ A high-performance cash reconciliation module was integrated to simulate automat
   - **Uncredited Revenue Alert:** Automatically catches unmapped/unpaid ledger items where transactions exist but corresponding bank records are missing.  
   - **Calculation Variance Alert:** Proactively flags processing errors or incorrect fee deductions by running delta calculations (`Expected_Net` vs. `Actual_Net`).  
 ・**Production-Grade Code Quality:** Implemented explicit deep copies (`.copy()`) during data frame slicing to mitigate pointer ambiguity and prevent `SettingWithCopyWarning`, ensuring deterministic data integrity.  
+## Feature Update: Rate Compliance Auditor & Variance Exception Filter  
+
+A specialized automated accounting logic auditor was integrated to detect rate compliance discrepancies and mathematical anomalies. This module functions as a critical programmatic gatekeeper, validating calculated system outputs (such as processing fees, withholding taxes, or multi-rate consumption taxes like 8%/10%) against master baseline contracts.  
+
+### Key Capabilities  
+・**Vectorized Theoretical Matching:** Evaluates massive datasets instantly by computing exact expected values at the line/merchant level, avoiding nested iteration overhead.  
+・**Micro-Variance Isolation:** Captures and filters minor arithmetic discrepancies (`Variance != 0`), which are typically caused by downstream rounding bugs (e.g., misaligned truncation, half-up rounding, or incorrect merchant-profile master rates).  
+・**Audit-Ready Logging:** Generates isolated exception tables containing exact variance metrics, empowering PMOs and system integrators to pinpoint root causes and issue immediate master-data correction tickets to development vendors.  
