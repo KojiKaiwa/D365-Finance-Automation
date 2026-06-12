@@ -84,3 +84,17 @@ A specialized automated accounting logic auditor was integrated to detect rate c
 ・**Vectorized Theoretical Matching:** Evaluates massive datasets instantly by computing exact expected values at the line/merchant level, avoiding nested iteration overhead.  
 ・**Micro-Variance Isolation:** Captures and filters minor arithmetic discrepancies (`Variance != 0`), which are typically caused by downstream rounding bugs (e.g., misaligned truncation, half-up rounding, or incorrect merchant-profile master rates).  
 ・**Audit-Ready Logging:** Generates isolated exception tables containing exact variance metrics, empowering PMOs and system integrators to pinpoint root causes and issue immediate master-data correction tickets to development vendors.  
+## Feature Update: End-to-End Integrated Audit Pipeline Framework
+
+The repository has been majorly refactored to aggregate all previously standalone auditing modules into a single, high-performance **Integrated Audit Pipeline Engine**. This mimics enterprise batch processing and continuous control monitoring (CCM) patterns necessary during critical ERP data migrations and financial platform switchovers.
+
+### Architectural Workflow & Pipeline Stages  
+1. **Stage 1: Structural Data Cleansing (`clean_vendor_master`)**  
+   - Strips multi-byte leading/trailing whitespaces and regularizes nested spaces.  
+   - Normalizes corporate legal identifiers via Regular Expressions (`re`) to perform strict baseline deduplication.  
+2. **Stage 2: Multi-System Reconciliation & Compliance Testing (`run_3way_matching_and_audit`)**  
+   - Conducts multi-key Inner Joins across Procurement (PO), SCM (GR), and Accounts Payable (INV) dimensions.  
+   - Evaluates quantity constraints (`Qty_Match`) and computes mathematical variances against master rate metrics concurrently.  
+3. **Stage 3: Exception Harvester & Artifact Generation (`main_audit_pipeline`)**  
+   - Isolates lines containing compound operational failures (e.g., matching a partial delivery alongside a fee calculation discrepancy).  
+   - Generates and writes out standardized evidence worksheets (`Integrated_Audit_Report.xlsx`) directly to disk for immediate PMO governance review.  
