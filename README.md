@@ -96,5 +96,60 @@ The repository has been majorly refactored to aggregate all previously standalon
    - Conducts multi-key Inner Joins across Procurement (PO), SCM (GR), and Accounts Payable (INV) dimensions.  
    - Evaluates quantity constraints (`Qty_Match`) and computes mathematical variances against master rate metrics concurrently.  
 3. **Stage 3: Exception Harvester & Artifact Generation (`main_audit_pipeline`)**  
-   - Isolates lines containing compound operational failures (e.g., matching a partial delivery alongside a fee calculation discrepancy).  
+   - Isolates lines containing compound operational failures (e.g., matching a partial delivery alongside a fee calculation discrepancy). # D365 F&O API Error Log Parser & Automation Toolkit
+
+A production-ready Python automation tool designed for Microsoft Dynamics 365 Finance & Operations (BizApps) support and implementation scenarios. This toolkit solves complex, cross-system data integration challenges by instantly parsing messy API error logs, mapping them to standard D365 resolutions, and generating actionable compliance reports.
+
+## 🚀 Key Features
+- **Real-Time Folder Monitoring:** Continuously watches an input folder for raw JSON/TXT error logs and processes them within 1 second.
+- **Advanced Knowledge Mapping:** Embedded with an ERP Support Knowledge Base that maps abstract exceptions directly to D365 functional configuration paths and resolutions.
+- **Robust Exception Handling:** Implements `try-except json.JSONDecodeError` to bypass corrupted log entries without crashing, ensuring high reliability in enterprise environments.
+- **Excel-Friendly Output:** Generates clean CSV reports using `utf-8-sig` encoding to prevent Japanese character corruption when opened directly in Microsoft Excel.
+
+---
+
+## 🛠️ Supported D365 Exception Scenarios
+This toolkit is pre-configured to automate troubleshooting for three of the most frequent enterprise integration bottlenecks:
+
+1. **`LedgerPostingException` (General Ledger Module)**
+   - *Cause:* Target fiscal period is set to "On hold" or "Closed".
+   - *Resolution:* Guides users to `General ledger > Calendars > Ledger calendars` to open the period.
+2. **`TaxCalculationException` (Indirect Taxes / Sales Tax Module)**
+   - *Cause:* Transaction tax code (e.g., TAX10) is missing from the D365 master database.
+   - *Resolution:* Directs users to verify configurations at `General ledger > Indirect taxes > Sales tax > Sales tax codes`.
+3. **`VendorBlockedException` (Accounts Payable Module)**
+   - *Cause:* The vendor account is on an internal procurement or compliance hold.
+   - *Resolution:* Directs support teams to check `Accounts payable > Vendors > All vendors > Authentication and hold tab`.
+
+---
+
+## 💻 Tech Stack & Architecture
+- **Language:** Python 3.x
+- **Core Libraries:** `pandas` (for high-performance data processing), `json`, `os`, `time`, `io`
+- **Design Philosophy:** Proactive Support Engineering & Automation (reducing initial ticket evaluation times from hours to seconds).
+
+---
+
+## 🏃‍♂️ How to Run & Test
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com
+   cd YOUR_REPOSITORY_NAME
+   ```
+
+2. **Run the script:**
+   ```bash
+   python automated_monitor.py
+   ```
+   *(The script will automatically create `input_logs` and `output_reports` directories.)*
+
+3. **Simulate a Support Scenario:**
+   Drop a text file containing the raw JSON logs into the `input_logs` folder. The system will process it instantly and output a beautiful, knowledge-mapped CSV inside `output_reports`.
+
+---
+
+## 👤 Author
+- **Certifications:** Microsoft Certified: Dynamics 365 Finance Functional Consultant Associate (MB-310), Azure AI Engineer Associate (AI-102)
+- **Domain Expertise:** Senior PMO / ERP Support Engineer with 20+ years of IT experience and deep financial knowledge (IFRS, Japanese Bookkeeping Level 2). 
    - Generates and writes out standardized evidence worksheets (`Integrated_Audit_Report.xlsx`) directly to disk for immediate PMO governance review.  
